@@ -17,24 +17,8 @@ export default function Home() {
   
   const [symbol, setSymbol] = useState<string>("");
   const [stockData, setStockData] = useState<any>(null);  
-  const [allSymbols, setAllSymbols] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-
-    useEffect(() => {
-    const fetchSymbols = async () => {
-      try {
-        const res = await fetch("/api/getallsymbols");
-        const data = await res.json();
-        if (res.ok) setAllSymbols(data.symbols || []);
-        else setError("Failed to fetch stock symbols.");
-      } catch {
-        setError("Error fetching symbols.");
-      }
-    };
-    fetchSymbols();
-  }, []);
-
   const getstocks = async (symbol: string) => {
     try{
       const res = await fetch("/api/getstocks", {
