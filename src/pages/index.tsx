@@ -31,6 +31,7 @@ export default function Home() {
       const data = await res.json();
       if (res.ok) {
         setStockData(data);
+        setError("");
       } else if (res.status === 400){
         setError("Invalid stock symbol or else it doesn't belong to NSE.");
         setStockData(null);
