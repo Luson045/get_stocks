@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { NseIndia } from "stock-nse-india";
-const nse = new NseIndia();
+//import { NseIndia } from "stock-nse-india";
+//const nse = new NseIndia();
 
 export const config = {
   runtime: "nodejs",
@@ -21,19 +21,19 @@ export default async function handler(
   }
 
   try {
-    const availableSymbols = await nse.getAllStockSymbols();
+    // const availableSymbols = "hello"//await nse.getAllStockSymbols();
 
-    const isValidSymbol = availableSymbols.some(
-      (stock) => stock.trim().toUpperCase() === symbol.trim().toUpperCase()
-    );
+    // const isValidSymbol = availableSymbols.some(
+    //   (stock) => stock.trim().toUpperCase() === symbol.trim().toUpperCase()
+    // );
 
-    if (!isValidSymbol) {
-      return res
-        .status(400)
-        .json({ error: "Invalid stock symbol or it doesn't belong to NSE." });
-    }
+    // if (!isValidSymbol) {
+    //   return res
+    //     .status(400)
+    //     .json({ error: "Invalid stock symbol or it doesn't belong to NSE." });
+    // }
 
-    const data = await nse.getEquityDetails(symbol);
+    const data = "hello" //await nse.getEquityDetails(symbol);
     return res.status(200).json(data);
   } catch (e) {
     console.error("API Error:", e);
