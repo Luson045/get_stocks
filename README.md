@@ -1,3 +1,6 @@
+<h2 style="color: red"> SINCE stock-nse-india uses external webservice from www.nseindia.com, it doesn't support requests from cloud services like vercel, hence the deployment isn't working and returning a 403 forbidden status code</h2>
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started
